@@ -7,15 +7,16 @@ public class App
 {
     public static void main( String[] args )
     {
-        for (byte isNotMeter = 0; isNotMeter == 0;) {
             System.out.print("Escribe tu peso (kg) ");
             Scanner scanner = new Scanner(System.in);
             float numberWeight = scanner.nextFloat();
 
             System.out.print("Escribe tu tamaño en metros (m) ");
             float numberHeight = scanner.nextFloat();
+            if (numberHeight > 3){
+                numberHeight /= 100; 
+            }
             if (numberHeight < 3) {
-                isNotMeter +=1;
                 byte number = 2;
                 float sumNumberHeightX2 = numberHeight * number;
                 float sumWightHeight =  numberWeight / sumNumberHeightX2;
@@ -45,9 +46,6 @@ public class App
                 if(sumWightHeight >= 40) {
                     System.out.println("Usted tiene " + resultShort + ". Hasta 40 " + "obesidad morbida");
                 }
-            } else {
-                System.out.println("Un error, prueba escribir el tamaño en metros.");
-            }
+            } 
         }
     }
-}
